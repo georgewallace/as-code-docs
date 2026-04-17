@@ -17,6 +17,7 @@
 /.next/
 /out/
 /public/dashboardSpec.html
+/public/dashboard-openapi.yaml
 
 # production
 /build
