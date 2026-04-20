@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "generate:spec-html": "redocly build-docs public/dashboard-openapi.json --output public/dashboardSpec.html --title \"Dashboard API Reference\" --disableGoogleFont --template scripts/redoc-template.hbs",
+    "generate:filtered-spec": "node scripts/filter-openapi.js",
+    "generate:spec-html": "npm run generate:filtered-spec && redocly build-docs public/dashboard-openapi.yaml --output public/dashboardSpec.html --title \"Dashboard API Reference\" --disableGoogleFont --template scripts/redoc-template.hbs",
     "predev": "npm run generate:spec-html",
     "dev": "next dev",
     "prebuild": "npm run generate:spec-html",
