@@ -39,3 +39,14 @@ npm run start
 npm run lint
 npm run build
 ```
+
+## Deployment
+
+GitHub Pages publishes the generated static site from GitHub Actions.
+
+- Workflow: `.github/workflows/deploy-pages.yml`
+- Published artifact: `dist/`
+- Automatic trigger: pushes to the default branch when `openapi/kibana-openapi.yaml`, `scripts/**`, `package.json`, `package-lock.json`, or `favicon.ico` changes
+- Manual trigger: `workflow_dispatch`
+
+Before the first deployment, configure the repository's GitHub Pages source to `GitHub Actions` in the repository settings.
